@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  --search-width: 10em;
+
+  --animation-timing: 3000ms;
+
+  --clr-blue-bg: hsl(263, 100%, 50%);
+  --clr-white: hsl(200, 15%, 95%);
+  --clr-black: hsl(263deg 50% 20% / var(--opacity, 100%));
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  background-color: var(--clr-blue-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,4 +26,54 @@ body {
   min-height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  color: var(--clr-black);
+  border: 0;
+}
+
+/**
+button {
+  border: 2px solid red;
+}
+/**/
+
+input {
+  padding: 0 .5em;
+  width: var(--search-width);
+  transition: width var(--animation-timing) ease-in;
+}
+
+.search-container {
+  padding: 0;
+  width: fit-content;
+  border-radius: 3px;
+  background-color: var(--clr-white);
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+button[type="submit"]:focus {
+  background-color: rgba(0, 0, 0, 0.253);
+}
+
+.search-container:focus-within {
+  outline: 2px solid var(--clr-black);
+}
+
+.shrink {
+  width: 0;
+  padding: 0;
+}
+
+.hide {
+  display: none;
 }
