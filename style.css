@@ -3,7 +3,7 @@
 :root {
   --search-width: 10em;
 
-  --animation-timing: 3000ms;
+  --transition-timing: 300ms;
 
   --clr-blue-bg: hsl(263, 100%, 50%);
   --clr-white: hsl(200, 15%, 95%);
@@ -46,7 +46,7 @@ button {
 input {
   padding: 0 .5em;
   width: var(--search-width);
-  transition: width var(--animation-timing) ease-in;
+  transition: width var(--transition-timing) ease-in;
 }
 
 .search-container {
@@ -62,7 +62,7 @@ button:focus {
 }
 
 button[type="submit"]:focus {
-  background-color: rgba(0, 0, 0, 0.253);
+  background-color: rgba(0, 0, 0, 0.178);
 }
 
 .search-container:focus-within {
