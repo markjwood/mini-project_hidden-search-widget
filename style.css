@@ -1,79 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --search-width: 10em;
+	--search-width: 10em;
 
-  --transition-timing: 300ms;
+	--transition-timing: 300ms;
 
-  --clr-blue-bg: hsl(263, 100%, 50%);
-  --clr-white: hsl(200, 15%, 95%);
-  --clr-black: hsl(263deg 50% 20% / var(--opacity, 100%));
+	--hsl-blue-bg: 263 100% 50%;
+	--hsl-white: 200 15% 95%;
+	--hsl-black: 263 50% 20%;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  background-color: var(--clr-blue-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden;
-  margin: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.125rem;
+	line-height: 1.6;
+	background-color: hsl(var(--hsl-blue-bg));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	padding: 0 2em;
+}
+
+button {
+	transition: background var(--transition-timing) ease-in-out;
 }
 
 button,
 input {
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  color: var(--clr-black);
-  border: 0;
+	font: inherit;
+	margin: 0;
+	background-color: transparent;
+	color: hsl(var(--hsl-black));
+	border: 0;
 }
-
-/**
-button {
-  border: 2px solid red;
-}
-/**/
 
 input {
-  padding: 0 .5em;
-  width: var(--search-width);
-  transition: width var(--transition-timing) ease-in;
+	padding: 0.125em 0.5em;
+	width: 15em;
+	transition: width var(--transition-timing);
 }
 
+input,
+button,
 .search-container {
-  padding: 0;
-  width: fit-content;
-  border-radius: 3px;
-  background-color: var(--clr-white);
+	border-radius: 0.125em;
+}
+
+input.hide {
+	padding: 0;
+	width: 0;
 }
 
 input:focus,
 button:focus {
-  outline: none;
+	outline: 0;
 }
 
-button[type="submit"]:focus {
-  background-color: rgba(0, 0, 0, 0.178);
+button:focus {
+	background-color: hsl(var(--hsl-black) / 0.1);
+}
+
+.search-container {
+	width: fit-content;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	background-color: hsl(var(--hsl-white));
 }
 
 .search-container:focus-within {
-  outline: 2px solid var(--clr-black);
-}
-
-.shrink {
-  width: 0;
-  padding: 0;
-}
-
-.hide {
-  display: none;
+	outline: 2px solid hsl(var(--hsl-black));
+	outline-offset: -3px;
 }
