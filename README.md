@@ -1,4 +1,4 @@
-# Hidden Search Bar
+# Hidden Search Widget
 
 A project based on the fourth project in Brad Traversy & Florin Pop's Udemy course, "50 Projects in 50 Days". The instructor's original code is available at https://github.com/bradtraversy/50projects50days
 
